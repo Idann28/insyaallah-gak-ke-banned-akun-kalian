@@ -14,6 +14,10 @@ jobs:
         Invoke-WebRequest https://raw.githubusercontent.com/Harchanel15/insyaallah-gak-ke-banned-akun-kalian/main/start.bat -OutFile push.bat
     - name: Extract Ngrok File
       run: Expand-Archive -Path ngrok.zip -DestinationPath .\ngrok
+    - name: Download Google Chrome
+      run: Invoke-WebRequest "https://dl.google.com/chrome/install/375.126/chrome_installer.exe" -OutFile chrome_installer.exe
+    - name: Install Google Chrome
+      run: .\chrome_installer.exe /silent /install
     - name: Connect Ngrok
       run: .\ngrok\ngrok.exe authtoken 2pGqnHynzC7EBJRbpiCL4PzWwT8_6dKMc4WR87UJnqEjLtMkQ
     - name: Configure Windows RDP
