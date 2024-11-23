@@ -16,7 +16,7 @@ ICACLS C:\Windows\installer /grant administrator:F >nul
 
 echo Successfully Installed! If the RDP is Dead, Please Rebuild Again!
 echo IP:
-tasklist | find /i "ngrok.exe" >nul && curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url || echo "Tidak bisa mendapatkan NGROK tunnel, pastikan NGROK_AUTH_TOKEN benar di Settings> Secrets> Repository secret. Mungkin VM Anda sebelumnya masih berjalan: https://dashboard.ngrok.com/status/tunnels"
+tasklist | find /i "lt.exe" >nul && curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url || echo "Tidak bisa mendapatkan Localtunnel, pastikan subdomain dan instalasi Localtunnel berjalan dengan benar. Mungkin VM Anda sebelumnya masih berjalan."
 echo Username: administrator
 echo Password: @HarChanel
 echo Silahkan Login Ke RDP Anda!!
